@@ -7,8 +7,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Cricbuzz {
 
-	@Test
-	public void cricbuzz() {
+	//@Test
+	public static void main(String[] args) {
 		
 		// WebDriverManager.chromedriver().setup();
 		// WebDriver driver=new ChromeDriver();
