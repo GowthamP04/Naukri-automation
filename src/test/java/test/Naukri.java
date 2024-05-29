@@ -15,6 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -34,9 +35,10 @@ public class Naukri {
 
 	@BeforeClass
 	public void setUp() throws Exception {
-		WebDriverManager.chromedriver().setup();
-		ChromeOptions options = new ChromeOptions();
-	//	options.addArguments("--headless");
+		WebDriverManager.edgedriver().setup();
+		
+		//ChromeOptions options = new ChromeOptions();
+		//options.addArguments("--headless");
         // options.addArguments("--disable-gpu");
         // options.addArguments("--window-size=1920,1080");
         // options.addArguments("--no-sandbox");
@@ -47,7 +49,9 @@ public class Naukri {
         // options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         // options.addArguments("--incognito");
         // options.addArguments("--disable-extensions");
-		driver = new ChromeDriver(options);
+		//driver = new ChromeDriver(options);
+		
+		driver=new EdgeDriver();
 		driver.get("https://www.naukri.com/nlogin/login");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
