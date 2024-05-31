@@ -109,6 +109,7 @@ public class Naukri {
 		driver.findElement(By.xpath("//div[@class='nI-gNb-drawer__icon-img-wrapper']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[@title='Logout']")).click();
+		Thread.sleep(2000);
 		System.out.println("--------------Sucessfully Profile Updated -----------");
 		
 	}
