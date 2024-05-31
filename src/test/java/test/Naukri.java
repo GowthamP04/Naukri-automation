@@ -52,7 +52,7 @@ public class Naukri {
 		//driver = new ChromeDriver(options);
 		
 		driver=new EdgeDriver();
-		driver.get("https://www.naukri.com/nlogin/login");
+		driver.get("https://www.naukri.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 	}
