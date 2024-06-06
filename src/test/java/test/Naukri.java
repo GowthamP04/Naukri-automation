@@ -85,7 +85,7 @@ public class Naukri {
 		  
 		driver.findElement(By.xpath("//a[text()='View']")).click();
 		
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//ul/li/span[text()='IT skills']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[text()='Automation Framework Development']/following-sibling::span[text()='editOneTheme']"))
