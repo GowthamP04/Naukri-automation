@@ -32,6 +32,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Naukri {
 	private WebDriver driver;
 	private static final String ALGORITHM = "AES";
+	int i=1;
 
 	@BeforeClass
 	public void setUp() throws Exception {
@@ -52,13 +53,16 @@ public class Naukri {
 		//driver = new ChromeDriver(options);
 		
 		driver=new EdgeDriver();
-		driver.get("https://www.naukri.com");
+		//driver.get("https://www.naukri.com");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 	}
 
 	@Test
 	public void updateProfile() throws Exception {
+
+		try{
+			driver.get("https://www.naukri.com");
 		
 		String key = encrypt("q8kZWlKAkpgyWfBaL7QqzA==", "q8kZWlKAkpgyWfBaL7QqzA==");
 		String userName = decrypt("arcbLfn8blQEu9AJ7bgy7cf/xF/9IKah6utWQyy3NuI=",
@@ -112,6 +116,17 @@ public class Naukri {
 		Thread.sleep(2000);
 		System.out.println("--------------Sucessfully Profile Updated -----------");
 		
+		} catch (Exception e){
+			System.out.println("-------------Inside exception-----------"+ i++);
+
+			if(i<=3){
+				updateProfile();
+			}	
+
+		      takeScreenshot("screenshot-after-click.png");
+			System.out.println("-------------Error profile is not fetched ------------");
+			Assert.fail("Error profile is not updated...");
+		}
 	}
 
 	public static String decrypt(String encryptedData, String key) throws Exception {
