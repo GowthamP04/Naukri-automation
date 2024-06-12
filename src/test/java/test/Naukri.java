@@ -1,4 +1,4 @@
-package test;
+package factory;
 
 import java.time.Duration;
 import java.util.Base64;
@@ -16,6 +16,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -27,7 +28,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Duration;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Naukri {
 	private WebDriver driver;
@@ -36,7 +37,7 @@ public class Naukri {
 
 	@BeforeClass
 	public void setUp() throws Exception {
-		WebDriverManager.edgedriver().setup();
+		//WebDriverManager.edgedriver().setup();
 		
 		//ChromeOptions options = new ChromeOptions();
 		//options.addArguments("--headless");
@@ -116,7 +117,7 @@ public class Naukri {
 		Thread.sleep(2000);
 		System.out.println("--------------Sucessfully Profile Updated -----------");
 		} catch (Exception e) {
-			System.out.println("Inside Eexception count " + i++);
+			System.out.println("Inside Exception count " + i++);
 			if (i <= 3) {
 				updateProfile();
 			}
