@@ -115,20 +115,17 @@ public class Naukri {
 		driver.findElement(By.xpath("//a[@title='Logout']")).click();
 		Thread.sleep(2000);
 		System.out.println("--------------Sucessfully Profile Updated -----------");
-		
-		} catch (Exception e){
-			System.out.println("-------------Inside exception-----------"+ i++);
-
-			if(i<=3){
+		} catch (Exception e) {
+			System.out.println("Inside Eexception count " + i++);
+			if (i <= 3) {
 				updateProfile();
-			}	
-
-		      takeScreenshot("screenshot-after-click.png");
+			}
+			Assert.fail("Profile is not updated");
+			takeScreenshot("screenshot-after-click.png");
 			System.out.println("-------------Error profile is not fetched ------------");
-			Assert.fail("Error profile is not updated...");
 		}
-	}
 
+	}
 	public static String decrypt(String encryptedData, String key) throws Exception {
 		SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), ALGORITHM);
 		Cipher cipher = Cipher.getInstance(ALGORITHM);
