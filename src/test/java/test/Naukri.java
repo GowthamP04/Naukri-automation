@@ -54,9 +54,9 @@ public class Naukri {
 		//driver = new ChromeDriver(options);
 		
 		driver=new EdgeDriver();
-		driver.get("https://www.naukri.com");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+		//driver.get("https://www.naukri.com");
+		//driver.manage().window().maximize();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 	}
 
 	@Test
@@ -64,6 +64,9 @@ public class Naukri {
 
 		try{
 			driver.get("https://www.naukri.com");
+			driver.manage().window().maximize();
+		        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+		
 		
 		String key = encrypt("q8kZWlKAkpgyWfBaL7QqzA==", "q8kZWlKAkpgyWfBaL7QqzA==");
 		String userName = decrypt("arcbLfn8blQEu9AJ7bgy7cf/xF/9IKah6utWQyy3NuI=",
