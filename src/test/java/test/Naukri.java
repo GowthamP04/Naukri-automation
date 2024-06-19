@@ -54,9 +54,9 @@ public class Naukri {
 		//driver = new ChromeDriver(options);
 		
 		driver=new EdgeDriver();
-		//driver.get("https://www.naukri.com");
-		//driver.manage().window().maximize();
-		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+		driver.get("https://www.naukri.com");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 	}
 
 	@Test
