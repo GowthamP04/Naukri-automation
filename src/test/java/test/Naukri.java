@@ -122,6 +122,7 @@ public class Naukri {
 		} catch (Exception e) {
 			System.out.println("Inside Exception count " + i++);
 			if (i <= 3) {
+				Thread.sleep(2000);
 				updateProfile();
 			}
 			Assert.fail("Profile is not updated");
