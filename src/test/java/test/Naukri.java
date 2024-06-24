@@ -54,7 +54,7 @@ public class Naukri {
 		//driver = new ChromeDriver(options);
 		
 		driver=new EdgeDriver();
-		driver.get("https://www.naukri.com");
+		driver.get("https://www.naukri.com/nlogin/login");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 	}
@@ -63,7 +63,8 @@ public class Naukri {
 	public void updateProfile() throws Exception {
 
 		try{
-			driver.get("https://www.naukri.com");
+			//driver.get("https://www.naukri.com");
+			driver.get("https://www.naukri.com/nlogin/login");
 			driver.manage().window().maximize();
 		        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 		
